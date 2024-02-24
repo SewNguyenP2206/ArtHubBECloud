@@ -28,7 +28,7 @@ pipeline {
         stage('Run docker-compose') {
             steps {
                 echo 'Deploying and cleaning'
-                sh 'docker-compose -f docker-compose.yml up'
+                sh 'docker compose -f docker-compose.yml up'
                 echo 'Check docker ps'
                 sh 'docker ps'
             }
