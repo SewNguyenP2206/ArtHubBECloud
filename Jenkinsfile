@@ -30,7 +30,7 @@ pipeline {
                 echo 'Deploying and cleaning'
                 sh 'docker compose -f docker-compose.yml up'
                 echo 'Create docker network'
-                sh 'docker network create arthub-app-network'
+                sh 'docker network create backend'
             }
         }
     }
