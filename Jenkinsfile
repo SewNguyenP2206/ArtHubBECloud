@@ -1,6 +1,8 @@
 pipeline {
 
-    agent any
+    agent {
+            docker { image 'node:20.11.1-alpine3.19' }
+        }
 
     tools {
         maven 'my-maven'
@@ -21,16 +23,12 @@ pipeline {
                 withDockerRegistry(credentialsId: 'dockerhub', url: 'https://index.docker.io/v1/') {
                     sh 'docker build -t sewnguyenp2206/arthubbecloud .'
                     sh 'docker push sewnguyenp2206/arthubbecloud'
-                    echo 'Print current workdir'
-                    sh 'pwd'
                 }
             }
         }
 
         stage('Run docker-compose') {
             steps {
-                echo 'Print current workdir'
-                sh 'pwd'
                 echo 'Deploying and cleaning'
                 sh 'docker-compose -f docker-compose.yml up'
                 echo 'Check docker ps'
