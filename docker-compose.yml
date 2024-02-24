@@ -24,8 +24,8 @@ services:
 
 networks:
   backend:
-    external:
-      name: arthub-app-network
+    external: true
+
 
 volumes:
   accountDBVolumn:

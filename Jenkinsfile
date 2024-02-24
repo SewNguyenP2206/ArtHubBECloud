@@ -27,11 +27,8 @@ pipeline {
 
         stage('Run docker-compose') {
             steps {
-                echo 'Create docker network'
-                sh 'docker network create backend'
                 echo 'Deploying and cleaning'
                 sh 'docker compose -f docker-compose.yml up'
-
             }
         }
     }
