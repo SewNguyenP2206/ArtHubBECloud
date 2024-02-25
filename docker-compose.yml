@@ -5,7 +5,7 @@ services:
     container_name: microservice-all-sql-server-2019-container-1
     environment:
       - ACCEPT_EULA=Y
-      - SA_PASSWORD=Phu0005l5!
+      - SA_PASSWORD=Phu@123456789
     volumes:
       - accountDBVolumn:/var/opt/mssql
     ports:
