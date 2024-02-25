@@ -31,7 +31,7 @@ pipeline {
                 sh 'docker pull mcr.microsoft.com/mssql/server:2022-latest'
                 sh 'docker network create backend || echo "this network exists"'
 
-                sh 'docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Phu@123456789" -p 1433:1433 --name sql1 --hostname sql1 --network backend -d mcr.microsoft.com/mssql/server:2022-latest'
+                sh 'docker run -e "ACCEPT_EULA=Y" -e "MSSQL_SA_PASSWORD=Phu@123456789" -p 1433:1433 --name sql1 --hostname sql1 --network backend -d mcr.microsoft.com/mssql/server:2019-latest'
 
                 sh 'docker exec -i sql1 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Phu@123456789 -Q "CREATE DATABASE ArtHub"'
 
