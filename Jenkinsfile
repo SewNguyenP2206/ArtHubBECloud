@@ -38,14 +38,17 @@ pipeline {
                         sh 'docker exec -it sql1 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Phu@123456789 -i "arthub.sql"'
                     }
                 }
-         }
+
 
          stage('Deploy Spring Boot to DEV') {
-                     steps {
-                         echo 'Deploying and cleaning'
-                         sh 'docker container run -d --rm --name arthub-springboot -p 8081:8080 --network backend sewnguyenp2206/arthubbecloud'
-                     }
-                 }
+                              steps {
+                                  echo 'Deploying and cleaning'
+                                  sh 'docker container run -d --rm --name arthub-springboot -p 8081:8080 --network backend sewnguyenp2206/arthubbecloud'
+                              }
+                          }
+         }
+
+
     post {
         // Clean after build
         always {
