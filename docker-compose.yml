@@ -1,17 +1,17 @@
 version: '3'
 services:
   sql-server-2019-container:
-    image: mcr.microsoft.com/mssql/server:2019-latest
-    container_name: microservice-all-sql-server-2019-container-1
+    image: microsoft/mssql-server-linux:2017-latest
+    container_name: sql-server-2019-container-1
     environment:
-      - ACCEPT_EULA=Y
-      - SA_PASSWORD=Phu@123456789
-    volumes:
-      - accountDBVolumn:/var/opt/mssql
+        ACCEPT_EULA: "Y"
+        SA_PASSWORD: "Phu@123456789"
     ports:
       - "1435:1433"
     networks:
       - backend
+
+
 
   arthubbecloud:
     image: sewnguyenp2206/arthubbecloud:latest
@@ -24,7 +24,3 @@ services:
 
 networks:
   backend:
-
-
-volumes:
-  accountDBVolumn:
