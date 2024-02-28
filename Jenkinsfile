@@ -11,7 +11,6 @@ pipeline {
                 sh 'mvn --version'
                 sh 'java -version'
                 sh 'whoami'
-                sh 'usermod -a -G docker jenkins'
                 sh 'mvn clean package -Dmaven.test.failure.ignore=true'
                 
             }
