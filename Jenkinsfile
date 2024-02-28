@@ -37,6 +37,8 @@ pipeline {
 
                 sh 'docker ps'
 
+                sleep(time:40, unit: "SECONDS")
+
                 
                 sh "docker exec sql1 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Phu@123456789 -Q 'CREATE DATABASE ArtHub'"
 
