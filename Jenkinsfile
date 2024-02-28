@@ -38,7 +38,7 @@ pipeline {
                 sh 'docker ps'
 
                 
-                sh "docker exec sql1 /opt/mssql-tools/bin/sqlcmd -S localhost -U 'sa' -P 'Phu@123456789' -C -Q 'CREATE DATABASE ArtHub'"
+                sh "docker exec sql1 /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Phu@123456789 -Q 'CREATE DATABASE ArtHub'"
 
                 sh 'docker cp arthub.sql sql1:/arthub.sql'
 
