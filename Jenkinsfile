@@ -51,7 +51,7 @@ pipeline {
         stage('Deploy Spring Boot to DEV') {
             steps {
                 echo 'Deploying and cleaning'
-                sh 'docker run --name arthub-springboot -p 8081:8080 --network backend sewnguyenp2206/arthubbecloud'
+                sh 'docker run --name arthub-springboot -p 8081:8080 --network backend -d sewnguyenp2206/arthubbecloud'
             }
         }
     }
