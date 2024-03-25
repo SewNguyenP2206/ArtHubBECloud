@@ -1,5 +1,7 @@
 use ArtHub
 
+	
+
 CREATE TABLE [dbo].[Account](
 	[id] [bigint] IDENTITY(1,1) NOT NULL,
 	[username] [nvarchar](100) NOT NULL,
